@@ -1,7 +1,7 @@
-import Value from "./Models/Poke.js";
+import Poke from "./Models/Poke.js";
 
 let _state = {
-  pokemon: [],
+  pokemon: {},
   mypokemon: []
 };
 
@@ -60,6 +60,7 @@ class Store {
    * @param {any} data
    */
   commit(prop, data) {
+    debugger;
     _validateProp(prop);
     _state[prop] = data;
     _listeners[prop].forEach(fn => fn());

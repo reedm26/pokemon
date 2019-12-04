@@ -21,7 +21,6 @@ export default class PokeController {
     let form = event.target;
     let name = form.name.value;
     PokeService.search(name).catch(e => {
-      debugger;
       console.log(e);
     });
   }

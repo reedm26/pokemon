@@ -7,7 +7,10 @@ let _pokeApi = axios.create({
 class PokeService {
   search(name) {
     return _pokeApi.get("pokemon/" + name).then(res => {
+      console.log(res);
+
       Store.commit("pokemon", res.data);
+      console.log(Store.State.pokemon);
     });
   }
 }
